@@ -1,4 +1,4 @@
-package com.example.thindie.surftrainee.ui.theme
+package com.example.thindie.surftrainee.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

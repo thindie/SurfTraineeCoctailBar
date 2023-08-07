@@ -1,10 +1,11 @@
-package com.example.compose
+package com.example.thindie.surftrainee.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 
 private val LightColors = lightColorScheme(
@@ -82,6 +83,9 @@ fun TraineeTheme(
     } else {
         DarkColors
     }
+
+    val systemUIcontroller = rememberSystemUiController()
+    systemUIcontroller.setSystemBarsColor(colors.surface)
 
 
     MaterialTheme(
