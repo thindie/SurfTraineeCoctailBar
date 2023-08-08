@@ -33,7 +33,7 @@ fun CocktailInputField(modifier: Modifier = Modifier, state: CocktailInputFieldS
             .height(
                 state.height
             ),
-        textStyle = MaterialTheme.typography.labelLarge.copy(textAlign = TextAlign.Start),
+        textStyle = MaterialTheme.typography.labelLarge,
         singleLine = !state.isMajor,
         value = state.fieldState.value,
         onValueChange = state::onValueChange,
@@ -78,7 +78,7 @@ class CocktailInputFieldState(
 
     private val _isError = mutableStateOf(false)
 
-    val height = if (isMajor) 56.dp else 154.dp
+    val height = if (isMajor) 86.dp else 154.dp
     val isError: State<Boolean>
         get() = _isError
 
@@ -105,10 +105,10 @@ class CocktailInputFieldState(
         @Composable get() = OutlinedTextFieldDefaults.colors(
             disabledTextColor = Color(0xFF79747E),
             cursorColor = Color(0xFF4B97FF),
+            errorTextColor = Color(0xFFFF0000),
             errorCursorColor = Color(0xFFFF0000),
             focusedTextColor = Color(0xFF313131),
             unfocusedTextColor = Color(0xFF79747E),
-            errorTextColor = Color(0xFFFF0000),
             focusedContainerColor = Color.White,
             unfocusedContainerColor = Color.White,
             disabledContainerColor = Color.White,
@@ -117,14 +117,19 @@ class CocktailInputFieldState(
             unfocusedLabelColor = Color(0xFF79747E),
             disabledLabelColor = Color(0xFF79747E),
             errorLabelColor = Color(0xFFFF0000),
-            focusedPlaceholderColor = Color(0xFFFF0000),
+            focusedPlaceholderColor = Color(0xFF313131),
             unfocusedPlaceholderColor = Color(0xFF79747E),
             disabledPlaceholderColor = Color(0xFF79747E),
             errorPlaceholderColor = Color(0xFFFF0000),
             focusedBorderColor = Color(0xFF79747E),
             unfocusedBorderColor = Color(0xFF79747E),
             disabledBorderColor = Color(0xFF79747E),
-            errorBorderColor = Color(0xFF79747E),
+            errorBorderColor = Color(0xFFFF0000),
+            errorLeadingIconColor = Color(0xFFFF0000),
+            errorTrailingIconColor = Color(0xFFFF0000),
+            errorSupportingTextColor = Color(0xFFFF0000),
+            errorPrefixColor = Color(0xFFFF0000),
+            errorSuffixColor = Color(0xFFFF0000),
         )
 
 }

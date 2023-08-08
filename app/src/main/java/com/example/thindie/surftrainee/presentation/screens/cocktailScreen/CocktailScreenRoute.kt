@@ -6,6 +6,6 @@ import com.example.thindie.surftrainee.presentation.navigation.CocktailBar
 
 fun NavGraphBuilder.cocktailScreen(onClickEdit: () -> Unit) {
     composable(route = CocktailBar.cocktailScreen) {
-
+        CocktailScreen(onClickEdit = onClickEdit)
     }
 }

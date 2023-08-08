@@ -24,42 +24,10 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             TraineeTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
+                CocktailApp()
             }
         }
     }
-
-    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
-    @Composable
-    fun isInLandScapeOrientation(): Boolean {
-        val windowSize = calculateWindowSizeClass(activity = this)
-        return when (windowSize.widthSizeClass) {
-            WindowWidthSizeClass.Expanded -> {
-                true
-            }
-
-            else -> false
-        }
-    }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!", modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    TraineeTheme {
-        Greeting("Android")
-    }
-}
 

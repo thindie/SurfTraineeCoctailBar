@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -32,20 +33,96 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.thindie.surftrainee.R
+import com.example.thindie.surftrainee.domain.Cocktail
 import com.example.thindie.surftrainee.presentation.commonelements.CocktailButton
 import com.example.thindie.surftrainee.presentation.commonelements.CocktailInputField
+import com.example.thindie.surftrainee.presentation.commonelements.CocktailInputFieldState
+import com.example.thindie.surftrainee.presentation.commonelements.CocktailPlaceHolder
 import com.example.thindie.surftrainee.presentation.commonelements.Screen
 import com.example.thindie.surftrainee.presentation.commonelements.rememberInputState
 import com.example.thindie.surftrainee.presentation.theme.TraineeTheme
 
+@Suppress("LongParameterList")
 @Composable
 fun EditScreen(
     editScreenViewModel: EditScreenViewModel = hiltViewModel(),
+    titleInputField: CocktailInputFieldState = rememberInputState(
+        isMajor = true,
+        hint = R.string.hint_title,
+        supportingText = R.string.hint_add_title
+    ),
+    description: CocktailInputFieldState = rememberInputState(
+        isMajor = false,
+        hint = R.string.hint_description,
+        supportingText = R.string.hint_optional
+    ),
+    recipe: CocktailInputFieldState = rememberInputState(
+        isMajor = false,
+        hint = R.string.hint_recipe_no_dots,
+        supportingText = R.string.hint_optional
+    ),
+    ingredientsListState: IngredientsListState = rememberIngredientsListState(),
     cocktail: String,
     onClickSave: () -> Unit,
     onClickCancel: () -> Unit,
 ) {
     Screen {
+        CocktailPlaceHolder(
+            modifier = Modifier.padding(
+                start = 72.dp,
+                end = 73.dp,
+                top = 40.dp,
+                bottom = 40.dp,
+            ),
+            onClickImage = {}
+        )
+        LazyColumn() {
+            item {
+                CocktailInputField(
+                    modifier = Modifier.padding(bottom = 24.dp),
+                    state = titleInputField
+                )
+            }
+            item {
+                CocktailInputField(
+                    modifier = Modifier.padding(bottom = 24.dp),
+                    state = description
+                )
+            }
+            item { IngredientsList(state = ingredientsListState) }
+            item {
+                CocktailInputField(
+                    modifier = Modifier.padding(bottom = 24.dp, top = 24.dp),
+                    state = recipe
+                )
+            }
+            item {
+                CocktailButton(
+                    modifier = Modifier.padding(bottom = 8.dp),
+                    label = R.string.button_label_save,
+                    isColored = true
+                ) {
+                    if (!titleInputField.isValid()) {
+                        val readyCocktailRecipe = Cocktail(
+                            name = titleInputField.fieldState.value,
+                            recipe = recipe.fieldState.value,
+                            description = description.fieldState.value,
+                            cocktailParts = ingredientsListState.list.value,
+                            isHasPhoto = false,
+                            photoPath = ""
+                        )
+                        editScreenViewModel.onClickSave(readyCocktailRecipe)
+                        onClickSave()
+                    }
+                }
+            }
+            item {
+                CocktailButton(label = R.string.button_label_cancel, isColored = false) {
+                    onClickCancel()
+                }
+            }
+        }
+
 
     }
 }
@@ -183,5 +260,15 @@ private fun IngredientUnit(label: String, onDelete: (String) -> Unit) {
 fun PreviewIngredients() {
     TraineeTheme {
         IngredientsList(state = rememberIngredientsListState())
+    }
+}
+
+@Preview
+@Composable
+fun PreviewEditScreen() {
+    TraineeTheme {
+        EditScreen(cocktail = "", onClickSave = { }) {
+
+        }
     }
 }

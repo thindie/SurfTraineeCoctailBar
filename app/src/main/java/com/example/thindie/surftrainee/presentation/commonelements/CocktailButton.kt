@@ -21,13 +21,18 @@ import com.example.thindie.surftrainee.R
 import com.example.thindie.surftrainee.presentation.theme.TraineeTheme
 
 @Composable
-fun CocktailButton(@StringRes label: Int, isColored: Boolean, onClick: () -> Unit) {
-    val modifier = Modifier
+fun CocktailButton(
+    modifier: Modifier = Modifier,
+    @StringRes label: Int,
+    isColored: Boolean,
+    onClick: () -> Unit,
+) {
+    val modifiers = modifier
         .padding(start = 16.dp, end = 16.dp)
         .fillMaxWidth()
     if (isColored) {
         Button(
-            modifier = modifier, colors = if (isColored) ButtonDefaults.buttonColors(
+            modifier = modifiers, colors = if (isColored) ButtonDefaults.buttonColors(
                 containerColor = Color(0xFF4B97FF),
                 contentColor = Color.White,
             ) else ButtonDefaults.buttonColors(
@@ -39,7 +44,7 @@ fun CocktailButton(@StringRes label: Int, isColored: Boolean, onClick: () -> Uni
         }
     } else {
         OutlinedButton(
-            modifier = modifier,
+            modifier = modifiers,
             colors = if (isColored) ButtonDefaults.buttonColors(
                 containerColor = Color(0xFF4B97FF),
                 contentColor = Color.White,
