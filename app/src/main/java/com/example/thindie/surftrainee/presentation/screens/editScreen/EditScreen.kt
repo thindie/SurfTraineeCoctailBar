@@ -30,6 +30,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.thindie.surftrainee.R
 import com.example.thindie.surftrainee.presentation.commonelements.CocktailButton
 import com.example.thindie.surftrainee.presentation.commonelements.CocktailInputField
@@ -38,7 +39,12 @@ import com.example.thindie.surftrainee.presentation.commonelements.rememberInput
 import com.example.thindie.surftrainee.presentation.theme.TraineeTheme
 
 @Composable
-fun EditScreen() {
+fun EditScreen(
+    editScreenViewModel: EditScreenViewModel = hiltViewModel(),
+    cocktail: String,
+    onClickSave: () -> Unit,
+    onClickCancel: () -> Unit,
+) {
     Screen {
 
     }

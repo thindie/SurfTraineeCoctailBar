@@ -11,6 +11,8 @@ fun NavGraphBuilder.editScreen(
     onClickCancel: () -> Unit,
 ) {
     composable(route = CocktailBar.editScreen) {
-
+        EditScreen(cocktail = cocktail, onClickSave = onClickSave) {
+            onClickCancel()
+        }
     }
 }
