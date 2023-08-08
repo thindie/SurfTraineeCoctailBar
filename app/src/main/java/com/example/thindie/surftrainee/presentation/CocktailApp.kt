@@ -1,9 +1,7 @@
-package com.example.thindie.surftrainee.presentation.theme
+package com.example.thindie.surftrainee.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
-import com.example.thindie.surftrainee.presentation.CocktailAppState
-import com.example.thindie.surftrainee.presentation.rememberCocktailBarAppState
 import com.example.thindie.surftrainee.presentation.screens.cocktailScreen.cocktailScreen
 import com.example.thindie.surftrainee.presentation.screens.editScreen.editScreen
 import com.example.thindie.surftrainee.presentation.screens.homescreen.homeScreen
@@ -16,8 +14,14 @@ fun CocktailApp(
         navController = appState.navHostController,
         startDestination = appState.startDestination
     ) {
-        cocktailScreen { }
-        editScreen(onClickSave = {}, onClickCancel = {})
-        homeScreen(onClickAdd = {}, onClickCockTail = {})
+        cocktailScreen(onClickEdit = appState::edit)
+        editScreen(
+            onClickSave = appState::home,
+            onClickCancel = appState::home
+        )
+        homeScreen(
+            onClickAdd = appState::edit,
+            onClickCockTail = appState::cocktail
+        )
     }
 }
