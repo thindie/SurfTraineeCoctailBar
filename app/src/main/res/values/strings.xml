@@ -1,8 +1,24 @@
 <resources>
     <string name="app_name">SurfTrainee</string>
     <string name="display_my_cocktails_home">My Cocktails</string>
-    <string name="fab_hint">+</string>
-    <string name="add_your_first_n_cocktail_here">Add your first\n cocktail here</string>
     <string name="display_my_cocktails_homescreen">My cocktails</string>
+    <string name="display_add_ingredient">Add ingredient</string>
+
+    <string name="fab_hint">+</string>
+
+    <string name="add_your_first_n_cocktail_here">Add your first\n cocktail here</string>
+
+
+    <string name="button_label_edit">Edit</string>
+    <string name="button_label_save">Save</string>
+    <string name="button_label_add">Add</string>
+    <string name="button_label_cancel">Cancel</string>
+
     <string name="hint_recipe">Recipe:</string>
+    <string name="hint_recipe_no_dots">Recipe</string>
+    <string name="hint_title">Recipe:</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_optional">Optional field</string>
+    <string name="hint_ingredient">Ingredient</string>
+    <string name="hint_add_title">Add title</string>
 </resources>
