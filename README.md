@@ -1,5 +1,4 @@
 
-
 ### Привет! Спасибо за флоу!
 
 >информацию о реализованной функциональности. В этой части должна быть информация:
@@ -47,9 +46,8 @@
     ![Screenshot_1](https://github.com/thindie/SurfTraineeCoctailBar/assets/93595798/33497222-a50a-40b0-a916-d21bb5464737)
     
     ![Screenshot_2](https://github.com/thindie/SurfTraineeCoctailBar/assets/93595798/cd904651-56ef-4439-a8ad-21c7de4e074a)
-    
-![Screenshot_3](https://github.com/thindie/SurfTraineeCoctailBar/assets/93595798/9b91f053-3c4f-41ee-a2bc-8293edac6a9a)
-![Screenshot_5](https://github.com/thindie/SurfTraineeCoctailBar/assets/93595798/1c9a391f-d119-4f69-ad9e-159f64c52704)
+      ![Screenshot_3](https://github.com/thindie/SurfTraineeCoctailBar/assets/93595798/9b91f053-3c4f-41ee-a2bc-8293edac6a9a)
+    ![Screenshot_5](https://github.com/thindie/SurfTraineeCoctailBar/assets/93595798/1c9a391f-d119-4f69-ad9e-159f64c52704)
 
 
 
