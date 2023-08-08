@@ -21,7 +21,7 @@ fun CocktailApp(
         )
         homeScreen(
             onClickAdd = appState::edit,
-            onClickCockTail = appState::cocktail
+            onClickCocktail = appState::cocktail
         )
     }
 }
