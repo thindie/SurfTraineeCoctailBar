@@ -91,5 +91,6 @@ fun TraineeTheme(
     MaterialTheme(
         colorScheme = colors,
         content = content,
+        typography = cocktailTypography
     )
 }

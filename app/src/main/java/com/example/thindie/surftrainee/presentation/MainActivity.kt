@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
 
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     @Composable
-    fun checkWindowSizeIsExpanded(): Boolean {
+    fun isInLandScapeOrientation(): Boolean {
         val windowSize = calculateWindowSizeClass(activity = this)
         return when (windowSize.widthSizeClass) {
             WindowWidthSizeClass.Expanded -> {
