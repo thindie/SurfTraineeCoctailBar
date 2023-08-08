@@ -4,4 +4,5 @@
     <string name="fab_hint">+</string>
     <string name="add_your_first_n_cocktail_here">Add your first\n cocktail here</string>
     <string name="display_my_cocktails_homescreen">My cocktails</string>
+    <string name="hint_recipe">Recipe:</string>
 </resources>

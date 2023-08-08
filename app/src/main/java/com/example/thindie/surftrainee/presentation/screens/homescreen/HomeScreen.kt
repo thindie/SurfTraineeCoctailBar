@@ -100,19 +100,25 @@ fun CocktailUnit(cocktail: Cocktail, onClickCocktail: (String) -> Unit) {
     }
 }
 
-
-private val fakeCocktail = Cocktail(name = "GAYISH DJANDANGO", isHasPhoto = false, photoPath = "")
-private val fakeStorage = buildList<Cocktail>(10) {
-    repeat(9) {
-        add(fakeCocktail)
-    }
-
-}
-
 @Preview
 @Composable
 fun PreviewCocktails() {
     TraineeTheme {
         HomeScreen(cocktails = fakeStorage, onClickAdd = { }, onClickCocktail = {})
     }
+}
+
+val fakeCocktail = Cocktail(
+    name = "GAYISH DJANDANGO",
+    recipe = "Muddle lime with leaves from the mint using a pestle and mortar. Mix with sprite. Add ice if needed.",
+    description = "To make this homemade lemonade, simply combine all the ingredients in a pitcher.",
+    cocktailParts = listOf("9 cups sprite", "small bunch mint", "3 limes, juiced"),
+    isHasPhoto = false,
+    photoPath = ""
+)
+private val fakeStorage = buildList<Cocktail>(10) {
+    repeat(9) {
+        add(fakeCocktail)
+    }
+
 }
