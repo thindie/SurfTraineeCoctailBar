@@ -1,4 +1,4 @@
-![Screenshot_1](https://github.com/thindie/SurfTraineeCoctailBar/assets/93595798/b9b6e82c-6293-4606-9f22-a7f885b378ab)# SurfTraineeCocktailBar
+
 
 ### Привет! Спасибо за флоу!
 
