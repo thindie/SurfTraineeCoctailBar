@@ -39,6 +39,7 @@ fun CocktailScreen(
     BottomSheetScaffold(
         sheetContent = {
             CocktailInformation(cocktail = cocktail)
+
         },
         sheetDragHandle = {},
         sheetPeekHeight = 400.dp,
